@@ -11,10 +11,15 @@ result_mul = mul(a, b)
 result_div = div(a, b)
 
 if __name__ == "__main__":
-    print("{:d} + {:d} = {:d}".format(a, b, result_add))
-    print("{:d} - {:d} = {:d}".format(a, b, result_sub))
-    print("{:d} * {:d} = {:d}".format(a, b, result_mul))
-    print("{:d} / {:d} = {:d}".format(a, b, result_div))
+    operations = [
+        ("+", result_add),
+        ("-", result_sub),
+        ("*", result_mul),
+        ("/", result_div)
+    ]
+
+    for operator, result in operations:
+        print(f"{a} {operator} {b} = {result}")
 
     argc = len(sys.argv) - 1
     argv = sys.argv[1:]
