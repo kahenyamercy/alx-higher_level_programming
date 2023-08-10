@@ -1,17 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.8
+import hidden_4
 
-import py_compile
-import dis
-import marshal
+if __name__ == "__main__":
+    names = dir(hidden_4)
+    filtered_names = [name for name in names if not name.startswith("__")]
+    filtered_names.sort()
 
-# Load the compiled module
-with open("hidden_4.pyc", "rb") as file:
-    code = marshal.load(file)
-
-# Extract the names defined in the module
-names = code.co_names
-
-# Filter and print the names that do not start with '__'
-for name in sorted(names):
-    if not name.startswith("__"):
+    for name in filtered_names:
         print(name)
