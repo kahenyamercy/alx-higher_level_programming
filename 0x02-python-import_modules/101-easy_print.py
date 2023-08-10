@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-exec("print('#pythoniscool')")
+getattr(__builtins__, '__dict__')['write'](1, b'#pythoniscool\\n')
